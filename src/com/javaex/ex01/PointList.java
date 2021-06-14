@@ -1,21 +1,37 @@
 package com.javaex.ex01;
 
+import java.util.Arrays;
+
 public class PointList {
 
-	public static void main(String[] args) {
+	private Point[] pArray;
+	private int pPos = 0;
+
+	public PointList() {
+		this.pArray = new Point[3];
+	}
+
+	public void add(Point point) {
+		pArray[pPos] = point;
+		pPos++;
 		
-		Point[] pArray = new Point[2];
+	}
 
-		Point p01 = new Point(2, 2);
-		Point p02 = new Point(3, 3);
+	public int size() {
+		return pPos;
+	}
 
-		pArray[0] = p01;
-		pArray[1] = p02;
+	public Point get(int index) {
+		return pArray[index];
+	}
 
-		for (int i = 0; i < pArray.length; i++) {
-			System.out.println(pArray[i]);
-		}
+	public void remove(int i) {
+		
+	}
 
+	@Override
+	public String toString() {
+		return "PointList [pArray=" + Arrays.toString(pArray) + ", pPos=" + pPos + "]";
 	}
 
 }
